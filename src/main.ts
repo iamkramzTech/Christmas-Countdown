@@ -3,6 +3,9 @@ const hoursElement = document.getElementById("hours");
 const minutesElement = document.getElementById("minutes");
 const secondsElement = document.getElementById("seconds");
 
+const countdownSection = document.getElementById("countdown-state");
+const christmasSection = document.getElementById("christmas-state");
+
 
 function BeginChristmasCountdown() {
 
@@ -23,6 +26,7 @@ function BeginChristmasCountdown() {
 
     const nextChristmasDate = `Dec 25, ${nextChristmasYear} 00:00:00`;
     const ChristmasDate = new Date(nextChristmasDate).getTime();
+    const isChristmasDay : boolean = currentMonth === 12 && currentDay === 25;
 
     // Find the distance between now and the Christmas date
     let distance: number = ChristmasDate - Number(now);
@@ -31,14 +35,27 @@ function BeginChristmasCountdown() {
     let minutes: number = 0;
     let seconds: number = 0;
 
-    //Don't calculate the distance if it is Christmas day
-    if (currentMonth !== 12 || (currentMonth === 12 && currentDay !== 25)) {
+    if(isChristmasDay)
+    {
+         // Hide countdown
+        countdownSection?.classList.add("d-none");
+
+        // Show Christmas greeting
+         christmasSection?.classList.remove("d-none");
+
+          // Stop updating the timer
+        return;
+    }
+    else
+    {
         // Time calculations for days, hours, minutes and seconds
         days = Math.ceil(distance / (1000 * 60 * 60 * 24));
         hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
     }
+
 
     daysElement.textContent = String(days).padStart(2, "0");
     hoursElement.textContent = String(hours).padStart(2, "0");
@@ -47,4 +64,6 @@ function BeginChristmasCountdown() {
 
 }
 
+//Call the method once before starting the interval
+BeginChristmasCountdown();
 setInterval(BeginChristmasCountdown, 1000);
