@@ -10,79 +10,79 @@
 </head>
 
 <body>
-<main class="container">
-    <section id="countdown-state" class="text-center">
-        <h1 class="h1">Christmas Countdown</h1>
-        <div class="row row-cols-2 row-cols-md-4 mb-4 text-center">
+    <main class="container">
+        <section id="countdown-state" class="text-center">
+            <h1 class="h1">Christmas Countdown</h1>
+            <div class="row row-cols-2 row-cols-md-4 mb-4 text-center">
 
-            <div class="col day">
-                <div class="card mb-4 rounded-3 text-center">
-                    <div class="card-body">
-                        <p id="days" class="card-text"></p>
+                <div class="col day">
+                    <div class="card mb-4 rounded-3 text-center">
+                        <div class="card-body">
+                            <p id="days" class="card-text"></p>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            Days
+                        </div>
                     </div>
-                    <div class="card-footer text-body-secondary">
-                        Days
+
+                </div>
+
+                <div class="col hour">
+                    <div class="card mb-4 rounded-3 text-center">
+                        <div class="card-body">
+                            <p id="hours" class="card-text"></p>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            Hours
+                        </div>
                     </div>
+
+                </div>
+
+                <div class="col minutes">
+                    <div class="card mb-4 rounded-3 text-center">
+                        <div class="card-body">
+                            <p id="minutes" class="card-text"></p>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            Minutes
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col seconds">
+                    <div class="card mb-4 rounded-3 text-center">
+                        <div class="card-body">
+                            <p id="seconds" class="card-text"></p>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            Seconds
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
+        </section>
 
-            <div class="col hour">
-                <div class="card mb-4 rounded-3 text-center">
-                    <div class="card-body">
-                        <p id="hours" class="card-text"></p>
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        Hours
-                    </div>
-                </div>
-
+        <!-- Christmas Greeting State -->
+        <section id="christmas-state" class="text-center d-none mt-5">
+            <div class="mb-4">
+                <h1 class="display-5">🔔 Merry Christmas! 🎁</h1>
+                <p class="lead">
+                    May the joy and peace of Christ fill your heart and home this Christmas.
+                </p>
             </div>
 
-            <div class="col minutes">
-                <div class="card mb-4 rounded-3 text-center">
-                    <div class="card-body">
-                        <p id="minutes" class="card-text"></p>
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        Minutes
-                    </div>
-                </div>
-
+            <div class="d-grid gap-2 col-10 col-md-6 mx-auto">
+                <button id="share-btn" class="btn btn-primary btn-lg">
+                    Share the Greeting
+                </button>
             </div>
+        </section>
 
-            <div class="col seconds">
-                <div class="card mb-4 rounded-3 text-center">
-                    <div class="card-body">
-                        <p id="seconds" class="card-text"></p>
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        Seconds
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Christmas Greeting State -->
-<section id="christmas-state" class="text-center d-none mt-5">
-    <div class="mb-4">
-        <h1 class="display-5">🔔 Merry Christmas! 🎁</h1>
-        <p class="lead">
-            May the joy and peace of Christ fill your heart and home this Christmas.
-        </p>
-    </div>
-
-    <div class="d-grid gap-2 col-10 col-md-6 mx-auto">
-        <button id="share-btn" class="btn btn-primary btn-lg">
-            Share the Greeting
-        </button>
-    </div>
-</section>
-
-</main>
+    </main>
     <footer class="py-3 text-muted text-center">
         <p>iamkramzTech</p>
     </footer>
@@ -92,11 +92,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
-
+    <!-- snow flakes minified js from unpkg cdn -->
+    <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+    <!-- load snowflakes logic-->
+    <script src="./js/loadSnowflakes.js"></script>
     <!--  timer countdown logic js file  -->
     <script src="./js/main.min.js"></script>
     <!--  Share button logic js file  -->
-     <script src="./js/shareButton.js"></script>
+    <script src="./js/shareButton.js"></script>
 </body>
 
 </html>

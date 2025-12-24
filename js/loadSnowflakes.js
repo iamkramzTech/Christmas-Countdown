@@ -1,0 +1,1 @@
+var sf = new Snowflakes();
